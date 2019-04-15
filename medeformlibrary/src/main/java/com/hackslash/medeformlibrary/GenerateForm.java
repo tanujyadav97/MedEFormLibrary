@@ -566,8 +566,37 @@ public class GenerateForm {
         Map<String, String> fieldsmap = getMapfromList();
         String ts = ((Long) System.currentTimeMillis()).toString();
 
-        mFirestore.collection("EHR").document(patientUserid).collection(filename)
-                .document(ts).set(fieldsmap).addOnSuccessListener(new OnSuccessListener<Void>() {
+//        mFirestore.collection("EHR").document(patientUserid).collection(filename)
+//                .document(ts).set(fieldsmap).addOnSuccessListener(new OnSuccessListener<Void>() {
+//            @Override
+//            public void onSuccess(Void aVoid) {
+//                Toast.makeText(context, "Database Updated Successfully", Toast.LENGTH_SHORT).show();
+//            }
+//        })
+//                .addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception e) {
+//                        Toast.makeText(context, "Unable to update database.", Toast.LENGTH_SHORT).show();
+//                        Log.e("FormActivity", e.toString());
+//                    }
+//                });
+        mFirestore.collection("EHR1").document("EHR1").collection(patientUserid)
+                .document(filename + '@' + ts).set(fieldsmap).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Toast.makeText(context, "Database Updated Successfully", Toast.LENGTH_SHORT).show();
+            }
+        })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(context, "Unable to update database.", Toast.LENGTH_SHORT).show();
+                        Log.e("FormActivity", e.toString());
+                    }
+                });
+
+        mFirestore.collection("EHR2").document("EHR2").collection(filename)
+                .document(patientUserid + '@' + ts).set(fieldsmap).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
                 Toast.makeText(context, "Database Updated Successfully", Toast.LENGTH_SHORT).show();
