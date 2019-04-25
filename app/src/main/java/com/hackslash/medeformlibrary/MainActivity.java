@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayList<QueryObj> queries1 = new ArrayList<>();
         queries1.add(new QueryObj(queryType.WHERE_GREATER_THAN, "Hb Count", 0));
-        queries1.add(new QueryObj(queryType.WHERE_LESS_THAN, "Hb Count", 700));
+        queries1.add(new QueryObj(queryType.WHERE_LESS_THAN, "Hb Count", 300));
         qry.selectArchetypeQuery("openEHR-EHR-OBSERVATION.soap_investigations.v8.adl", queries1,
                 new QueryCallback() {
                     public void onCallback(HashMap<String, HashMap<String, Map<String, Object>>> data, String exception) {
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        qry.getPatientTimestampQuery("1", "1555404623", "1555404627", new QueryCallback() {
+        qry.getPatientTimestampQuery("1", "1555404623", "1555404624", new QueryCallback() {
             @Override
             public void onCallback(HashMap<String, HashMap<String, Map<String, Object>>> data, String exception) {
                 if (data == null)
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         qry.getArchetypeTimestampQuery("openEHR-EHR-EVALUATION.SOAP_Assessment_RCP.v3.adl",
-                "1555404771", "1555404788", new QueryCallback() {
+                "1555404771", "1555404780", new QueryCallback() {
                     @Override
                     public void onCallback(HashMap<String, HashMap<String, Map<String, Object>>> data, String exception) {
                         if (data == null)
