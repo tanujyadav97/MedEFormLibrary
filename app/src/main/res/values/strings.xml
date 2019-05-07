@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">MedEFormLibrary</string>
+    <array name="querytype">
+        <item>Patient Query</item>
+        <item>Archetype Query</item>
+        <item>Get patient query</item>
+        <item>Get archetype query</item>
+        <item>Patient timestamp query</item>
+        <item>Archetype timestamp query</item>
+        <item>Patient Archetype timestamp query</item>
+    </array>
+    <array name="conds">
+        <item>WHERE_LESS_THAN</item>
+        <item>WHERE_LESS_THAN_OR_EQUAL_TO</item>
+        <item>WHERE_EQUAL_TO</item>
+        <item>WHERE_GREATER_THAN</item>
+        <item>WHERE_GREATER_THAN_OR_EQUAL_TO</item>
+        <item>WHERE_ARRAY_CONTAINS</item>
+    </array>
 </resources>
